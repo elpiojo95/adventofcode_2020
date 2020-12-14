@@ -31,9 +31,9 @@ readInterface
       console.log(count);
     }
     let count = 0;
-    let horizontal = -h_offset[1];
+    let horizontal = -h_offset[0];
     for (let v = 0; v < data.length; v += 2) {
-      horizontal += h_offset[1];
+      horizontal += h_offset[0];
       horizontal = horizontal % data[v].length;
       if (data[v][horizontal] == "#") {
         count++;
