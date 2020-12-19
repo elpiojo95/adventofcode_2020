@@ -2,7 +2,7 @@ const readline = require("readline");
 const fs = require("fs");
 
 const readInterface = readline.createInterface({
-  input: fs.createReadStream("inputs/day3_input.txt"),
+  input: fs.createReadStream("input.txt"),
   output: false,
   console: false,
 });

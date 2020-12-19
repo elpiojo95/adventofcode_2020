@@ -3,7 +3,7 @@ const fs = require("fs");
 const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
 
 const readInterface = readline.createInterface({
-  input: fs.createReadStream("inputs/day4_input.txt"),
+  input: fs.createReadStream("input.txt"),
   output: false,
   console: false,
 });
@@ -79,8 +79,6 @@ readInterface
       });
       if (count_fields == 7) {
         count++;
-        console.log(element);
-        //console.log("\n\n--", count_fields,"--\n\n");
       }
     });
     console.log(count);

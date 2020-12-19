@@ -2,7 +2,7 @@ const readline = require("readline");
 const fs = require("fs");
 
 const readInterface = readline.createInterface({
-  input: fs.createReadStream("inputs/day2_input.txt"),
+  input: fs.createReadStream("input.txt"),
   output: false,
   console: false,
 });
@@ -18,18 +18,12 @@ readInterface
     data.forEach((element) => {
       let strings = element.split(" ");
       let values = strings[0].split("-");
-      let first = values[0] - 1;
-      let second = values[1] - 1;
+      let min = values[0];
+      let max = values[1];
       let letter = strings[1][0];
       let pass = strings[2];
-      let matches = 0;
-      if (pass[first] == letter) {
-        matches++;
-      }
-      if (pass[second] == letter) {
-        matches++;
-      }
-      if (matches == 1) {
+      let occurrences = pass.split(letter).length - 1;
+      if (min <= occurrences && occurrences <= max) {
         count++;
       }
     });
